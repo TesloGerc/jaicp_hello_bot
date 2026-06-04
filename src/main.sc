@@ -4,11 +4,15 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Начнём.
+        a: Добрый день! Я - учебный проект Ячменева Михаила. Этот рукожоп ничего толком не умеет, поэтому просто поздаровайтесь со мной и уходите...
 
     state: Hello
         intent!: /привет
         a: Привет привет
+        
+    state: CustomHello
+        q!: * (даров/ку/дратути/здрасьте)*
+        a: О, привет!
 
     state: Bye
         intent!: /пока
@@ -16,7 +20,8 @@ theme: /
 
     state: NoMatch
         event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
+        a: Какого графа?!
+        a: Вы сказали: {{$request.query}}
 
     state: Match
         event!: match
